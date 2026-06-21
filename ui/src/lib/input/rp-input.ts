@@ -29,15 +29,23 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
       [class.rp-input--invalid]="invalid()"
       [class.rp-input--disabled]="disabled()"
     >
+      <span class="rp-input__affix rp-input__affix--prefix">
+        <ng-content select="[rp-prefix]" />
+      </span>
       <input
         class="rp-input__field"
         [type]="type()"
         [placeholder]="placeholder()"
         [disabled]="disabled()"
+        [attr.inputmode]="inputmode() || null"
+        [attr.autocomplete]="autocomplete() || null"
         [value]="value()"
         (input)="onInput($event)"
         (blur)="onBlur()"
       />
+      <span class="rp-input__affix rp-input__affix--suffix">
+        <ng-content select="[rp-suffix]" />
+      </span>
     </div>
   `,
   styles: [
@@ -84,6 +92,22 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
       .rp-input__field::placeholder {
         color: var(--rp-text-subtle);
       }
+      /* Affix slots — collapse to zero width when empty */
+      .rp-input__affix {
+        display: inline-flex;
+        align-items: center;
+        color: var(--rp-text-muted);
+        white-space: nowrap;
+      }
+      .rp-input__affix:empty {
+        display: none;
+      }
+      .rp-input__affix--prefix {
+        margin-right: 8px;
+      }
+      .rp-input__affix--suffix {
+        margin-left: 8px;
+      }
     `,
   ],
 })
@@ -91,6 +115,8 @@ export class RpInput implements ControlValueAccessor {
   readonly type = input<string>('text');
   readonly placeholder = input<string>('');
   readonly invalid = input<boolean>(false);
+  readonly inputmode = input<string>('');
+  readonly autocomplete = input<string>('');
 
   protected readonly value = signal('');
   protected readonly disabled = signal(false);

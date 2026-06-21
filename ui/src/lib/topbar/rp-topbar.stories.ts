@@ -5,19 +5,51 @@ const meta: Meta<RpTopbar> = {
   title: 'Components/Topbar',
   component: RpTopbar,
   tags: ['autodocs'],
-  argTypes: { heading: { control: 'text' } },
-  render: (args) => ({
-    props: args,
-    template: `
-      <div style="width:640px;border:1px solid var(--rp-border);border-radius:var(--rp-radius-lg);overflow:hidden">
-        <rp-topbar [heading]="heading">
-          <span style="color:var(--rp-text-muted)">govind&#64;ascertain.com.my</span>
-        </rp-topbar>
-      </div>`,
-  }),
+  decorators: [],
 };
 export default meta;
 
 type Story = StoryObj<RpTopbar>;
 
-export const Default: Story = { args: { heading: 'Invoicing' } };
+export const BrandBlue: Story = {
+  name: 'Brand blue (default)',
+  render: () => ({
+    props: {
+      userName: 'Govind K',
+      userEmail: 'govind@ascertain.com.my',
+    },
+    template: `
+      <rp-topbar
+        variant="brand"
+        logoText="RinggitPay"
+        [userName]="userName"
+        [userEmail]="userEmail"
+      />
+    `,
+  }),
+};
+
+export const White: Story = {
+  name: 'White variant',
+  render: () => ({
+    props: {
+      userName: 'Govind K',
+      userEmail: 'govind@ascertain.com.my',
+    },
+    template: `
+      <rp-topbar
+        variant="white"
+        logoText="RinggitPay"
+        [userName]="userName"
+        [userEmail]="userEmail"
+      />
+    `,
+  }),
+};
+
+export const LogoOnly: Story = {
+  name: 'Logo only (no user)',
+  render: () => ({
+    template: `<rp-topbar variant="brand" logoText="RinggitPay" />`,
+  }),
+};

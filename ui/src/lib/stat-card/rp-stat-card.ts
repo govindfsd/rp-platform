@@ -50,9 +50,11 @@ export type RpStatTrend = 'up' | 'down' | 'flat';
       .rp-stat__value {
         margin-top: 6px;
         font-family: var(--rp-font-family-sans);
-        font-size: var(--rp-font-size-2xl);
+        /* Responsive: shrinks on narrow cards so amounts never wrap mid-number */
+        font-size: clamp(1.125rem, 0.9rem + 1.4vw, 1.5rem);
         font-weight: var(--rp-font-weight-medium);
         color: var(--rp-text);
+        white-space: nowrap;
       }
       .rp-stat__delta {
         margin-top: 4px;
