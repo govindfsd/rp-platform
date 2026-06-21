@@ -533,6 +533,31 @@ import {
       .rp-dt__scroll {
         overflow: auto;
       }
+      /* Thin, brand-coloured scrollbars for the scroll + virtual viewport. */
+      .rp-dt__scroll,
+      .rp-dt__vbody {
+        scrollbar-width: thin;
+        scrollbar-color: color-mix(in srgb, var(--rp-brand) 55%, transparent)
+          transparent;
+      }
+      .rp-dt__scroll::-webkit-scrollbar,
+      .rp-dt__vbody::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      .rp-dt__scroll::-webkit-scrollbar-track,
+      .rp-dt__vbody::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      .rp-dt__scroll::-webkit-scrollbar-thumb,
+      .rp-dt__vbody::-webkit-scrollbar-thumb {
+        background: color-mix(in srgb, var(--rp-brand) 50%, transparent);
+        border-radius: 99px;
+      }
+      .rp-dt__scroll::-webkit-scrollbar-thumb:hover,
+      .rp-dt__vbody::-webkit-scrollbar-thumb:hover {
+        background: var(--rp-brand);
+      }
       .rp-dt__table {
         width: 100%;
         border-collapse: collapse;
@@ -585,11 +610,38 @@ import {
         white-space: nowrap;
         text-align: center;
       }
-      .rp-dt__check-col input {
+      /* Soft, brand-coloured custom checkboxes (replaces the heavy native box). */
+      .rp-dt input[type='checkbox'] {
+        appearance: none;
+        -webkit-appearance: none;
         width: 16px;
         height: 16px;
-        accent-color: var(--rp-brand);
+        margin: 0;
+        flex-shrink: 0;
+        border: 1.5px solid var(--rp-border-strong);
+        border-radius: 5px;
+        background: var(--rp-surface);
         cursor: pointer;
+        transition: background-color 0.15s ease, border-color 0.15s ease;
+      }
+      .rp-dt input[type='checkbox']:hover {
+        border-color: var(--rp-brand);
+      }
+      .rp-dt input[type='checkbox']:focus-visible {
+        outline: 2px solid var(--rp-brand);
+        outline-offset: 2px;
+      }
+      .rp-dt input[type='checkbox']:checked {
+        border-color: var(--rp-brand);
+        background: var(--rp-brand)
+          url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E")
+          center / 11px no-repeat;
+      }
+      .rp-dt input[type='checkbox']:indeterminate {
+        border-color: var(--rp-brand);
+        background: var(--rp-brand)
+          url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' stroke='white' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M6 12h12'/%3E%3C/svg%3E")
+          center / 11px no-repeat;
       }
       .rp-dt__expand {
         display: inline-flex;
