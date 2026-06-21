@@ -133,7 +133,8 @@ describe('RpDataTable', () => {
       const cityToggle = Array.from(
         el.querySelectorAll<HTMLInputElement>('.rp-dt__colmenu-item input')
       ).find((i) => (i.closest('.rp-dt__colmenu-item')?.textContent ?? '').includes('City'));
-      cityToggle!.dispatchEvent(new Event('change'));
+      if (!cityToggle) throw new Error('city column toggle not found');
+      cityToggle.dispatchEvent(new Event('change'));
       fixture.detectChanges();
       expect(el.querySelector('td[data-label="City"]')).toBeNull(); // column gone
 
