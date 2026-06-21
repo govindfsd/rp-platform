@@ -11,7 +11,12 @@ export default [
       '@nx/dependency-checks': [
         'error',
         {
-          ignoredFiles: ['{projectRoot}/eslint.config.{js,cjs,mjs,ts,cts,mts}'],
+          // build-tokens.mjs is a build-time script (Style Dictionary); its deps
+          // are devDependencies of the workspace, not runtime peers of @rp/design.
+          ignoredFiles: [
+            '{projectRoot}/eslint.config.{js,cjs,mjs,ts,cts,mts}',
+            '{projectRoot}/build/**',
+          ],
         },
       ],
     },
