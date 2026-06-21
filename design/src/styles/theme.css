@@ -1,0 +1,80 @@
+/*
+ * @rp/design — semantic theme layer.
+ * Maps raw primitives (generated -> primitives.css) to meaningful, themeable
+ * variables. Light is the default; [data-theme='dark'] overrides.
+ * Import order in an app: primitives.css, then this file.
+ */
+@import './primitives.css';
+
+:root,
+:root[data-theme='light'] {
+  --rp-brand: var(--rp-color-brand-600);
+  --rp-brand-hover: var(--rp-color-brand-700);
+
+  --rp-surface: var(--rp-color-white);
+  --rp-surface-muted: var(--rp-color-slate-50);
+  --rp-surface-sunken: var(--rp-color-slate-100);
+
+  --rp-border: var(--rp-color-slate-200);
+  --rp-border-strong: var(--rp-color-slate-300);
+
+  --rp-text: var(--rp-color-slate-900);
+  --rp-text-muted: var(--rp-color-slate-500);
+  --rp-text-subtle: var(--rp-color-slate-400);
+  --rp-text-on-brand: var(--rp-color-white);
+
+  --rp-success: var(--rp-color-success-600);
+  --rp-success-surface: var(--rp-color-success-50);
+  --rp-success-text: var(--rp-color-success-700);
+
+  --rp-warning: var(--rp-color-warning-600);
+  --rp-warning-surface: var(--rp-color-warning-50);
+  --rp-warning-text: var(--rp-color-warning-700);
+
+  --rp-danger: var(--rp-color-danger-600);
+  --rp-danger-surface: var(--rp-color-danger-50);
+  --rp-danger-text: var(--rp-color-danger-700);
+
+  --rp-info: var(--rp-color-info-600);
+  --rp-info-surface: var(--rp-color-info-50);
+  --rp-info-text: var(--rp-color-info-700);
+}
+
+:root[data-theme='dark'] {
+  --rp-brand: var(--rp-color-brand-400);
+  --rp-brand-hover: var(--rp-color-brand-300);
+
+  --rp-surface: var(--rp-color-slate-900);
+  --rp-surface-muted: var(--rp-color-slate-800);
+  --rp-surface-sunken: var(--rp-color-slate-800);
+
+  --rp-border: var(--rp-color-slate-700);
+  --rp-border-strong: var(--rp-color-slate-600);
+
+  --rp-text: var(--rp-color-slate-50);
+  --rp-text-muted: var(--rp-color-slate-400);
+  --rp-text-subtle: var(--rp-color-slate-500);
+
+  --rp-success-surface: rgba(16, 185, 129, 0.12);
+  --rp-warning-surface: rgba(245, 158, 11, 0.12);
+  --rp-danger-surface: rgba(239, 68, 68, 0.12);
+  --rp-info-surface: rgba(59, 130, 246, 0.12);
+}
+
+:root {
+  color-scheme: light dark;
+}
+
+body {
+  margin: 0;
+  font-family: var(--rp-font-family-sans);
+  font-size: var(--rp-font-size-base);
+  line-height: var(--rp-font-line-height-normal);
+  color: var(--rp-text);
+  background: var(--rp-surface-muted);
+}
+
+/* Align monetary figures column-perfect in tables. */
+.rp-tabular {
+  font-variant-numeric: tabular-nums;
+}
