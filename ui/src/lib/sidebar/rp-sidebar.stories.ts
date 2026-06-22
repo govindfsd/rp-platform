@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/angular';
 import { moduleMetadata } from '@storybook/angular';
 import { RpSidebar } from './rp-sidebar';
 import { filterNavByScreens } from './nav-permissions';
-import { adminNav } from '../_gallery/admin-nav';
+import { adminNav } from '../presets/admin-nav';
 
 // A limited "merchant operations" role — only these screens are granted.
 const merchantOpsNav = filterNavByScreens(adminNav, [

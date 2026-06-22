@@ -37,7 +37,10 @@
         "configDir": "libs/shared/ui/.storybook",
         "browserTarget": "ui:build-storybook",
         "compodoc": false,
-        "styles": ["libs/shared/design/src/styles/theme.css"]
+        "styles": [
+          "node_modules/@angular/cdk/overlay-prebuilt.css",
+          "libs/shared/design/src/styles/theme.css"
+        ]
       },
       "configurations": {
         "ci": {
@@ -53,7 +56,10 @@
         "configDir": "libs/shared/ui/.storybook",
         "browserTarget": "ui:build-storybook",
         "compodoc": false,
-        "styles": ["libs/shared/design/src/styles/theme.css"]
+        "styles": [
+          "node_modules/@angular/cdk/overlay-prebuilt.css",
+          "libs/shared/design/src/styles/theme.css"
+        ]
       },
       "configurations": {
         "ci": {

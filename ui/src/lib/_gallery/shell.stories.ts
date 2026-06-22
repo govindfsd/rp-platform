@@ -9,7 +9,7 @@ import { RpBreadcrumb } from '../breadcrumb/rp-breadcrumb';
 import { RpTabs } from '../tabs/rp-tabs';
 import { RpButton } from '../button/rp-button';
 import { RpStatCard } from '../stat-card/rp-stat-card';
-import { adminNav } from './admin-nav';
+import { adminNav } from '../presets/admin-nav';
 
 const meta: Meta = {
   title: 'Gallery/Admin shell',

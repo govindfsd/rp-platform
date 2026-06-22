@@ -8,7 +8,7 @@ import { RpPhoneInput } from '../phone-input/rp-phone-input';
 import { RpSegmentedControl } from '../segmented/rp-segmented-control';
 import { RpButton } from '../button/rp-button';
 import { RpIcon } from '../icon/rp-icon';
-import { merchantWizardSteps } from './merchant-wizard';
+import { merchantWizardSteps } from '../presets/merchant-wizard';
 
 const meta: Meta = {
   title: 'Gallery/Merchant wizard',
