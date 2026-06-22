@@ -109,6 +109,7 @@ export const Mobile: Story = {
         <rp-topbar
           variant="brand"
           logoText="RinggitPay"
+          [compact]="true"
           userName="Govind K"
           userEmail="govind@ascertain.com.my"
         />

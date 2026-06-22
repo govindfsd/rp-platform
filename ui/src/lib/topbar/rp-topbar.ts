@@ -11,7 +11,11 @@ import { RpIcon } from '../icon/rp-icon';
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [RpIcon],
   template: `
-    <header class="rp-topbar" [class.rp-topbar--brand]="variant() === 'brand'">
+    <header
+      class="rp-topbar"
+      [class.rp-topbar--brand]="variant() === 'brand'"
+      [class.rp-topbar--compact]="compact()"
+    >
       <div class="rp-topbar__start">
         <ng-content select="[topbar-leading]" />
         @if (logoImage()) {
@@ -179,6 +183,26 @@ import { RpIcon } from '../icon/rp-icon';
       .rp-topbar--brand .rp-topbar__end {
         color: rgba(255, 255, 255, 0.8);
       }
+      /* Compact (mobile): drop the email, tighten spacing so it never overflows. */
+      .rp-topbar--compact {
+        gap: 8px;
+        padding: 0 12px;
+      }
+      .rp-topbar--compact .rp-topbar__user {
+        padding: 4px;
+      }
+      .rp-topbar--compact .rp-topbar__user-email {
+        display: none;
+      }
+      /* Real narrow viewports adapt automatically too. */
+      @media (max-width: 640px) {
+        .rp-topbar__user-email {
+          display: none;
+        }
+        .rp-topbar__user {
+          padding: 4px;
+        }
+      }
     `,
   ],
 })
@@ -188,6 +212,8 @@ export class RpTopbar {
   readonly logoImage = input<string>('');
   readonly userName = input<string>('');
   readonly userEmail = input<string>('');
+  /** Compact layout for mobile: hides the user email (kept in the menu). */
+  readonly compact = input(false);
 
   protected readonly logoInitial = computed(() =>
     this.logoText().charAt(0).toUpperCase()

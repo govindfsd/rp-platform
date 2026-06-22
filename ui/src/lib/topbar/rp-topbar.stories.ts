@@ -53,3 +53,21 @@ export const LogoOnly: Story = {
     template: `<rp-topbar variant="brand" logoText="RinggitPay" />`,
   }),
 };
+
+export const Compact: Story = {
+  name: 'Compact (mobile)',
+  render: () => ({
+    props: { userName: 'Govind K', userEmail: 'govind@ascertain.com.my' },
+    template: `
+      <div style="width:390px;border:1px solid var(--rp-border);border-radius:14px;overflow:hidden">
+        <rp-topbar
+          variant="brand"
+          logoText="RinggitPay"
+          [compact]="true"
+          [userName]="userName"
+          [userEmail]="userEmail"
+        />
+      </div>
+    `,
+  }),
+};
