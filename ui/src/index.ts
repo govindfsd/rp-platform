@@ -38,6 +38,7 @@ export * from './lib/page-header/rp-page-header';
 export * from './lib/breadcrumb/rp-breadcrumb';
 export * from './lib/tabs/rp-tabs';
 export * from './lib/sidebar/rp-sidebar';
+export * from './lib/sidebar/nav-permissions';
 export * from './lib/topbar/rp-topbar';
 
 // data table

@@ -14,6 +14,13 @@ export interface RpNavItem {
   id: string;
   label: string;
   icon: string;
+  /**
+   * Route this item navigates to. For leaf items this doubles as the
+   * screen-permission key (mirrors the legacy `Screen.AppRoute` / RBAC model):
+   * pass the set of granted routes to `filterNavByScreens` to hide items the
+   * user has no access to. Group items omit it.
+   */
+  appRoute?: string;
   children?: RpNavItem[];
 }
 
