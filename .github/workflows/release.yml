@@ -1,0 +1,41 @@
+name: Release (@rp/* packages)
+
+# Publishes @rp/ui, @rp/design, @rp/util to the private registry.
+# Intentionally manual-only and UN-TRIGGERED until you wire the registry + token.
+on:
+  workflow_dispatch:
+    inputs:
+      dist-tag:
+        description: npm dist-tag
+        default: latest
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    # Disabled guard: remove this line once the registry + NPM_TOKEN secret are set.
+    if: ${{ false }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://REPLACE-ME.private-registry.example/
+          scope: '@rp'
+      - run: npm ci
+      - name: Build design tokens
+        run: npm run tokens
+      - name: Build libraries
+        run: npx nx run-many -t build --projects=ui,design,util
+      - name: Publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          for p in design util ui; do
+            npm publish "dist/libs/shared/$p" --tag "${{ inputs.dist-tag }}" --access restricted
+          done
