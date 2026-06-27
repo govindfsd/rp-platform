@@ -1,0 +1,27 @@
+{
+  "font": {
+    "family": {
+      "sans": { "value": "Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif", "type": "fontFamily" },
+      "mono": { "value": "'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace", "type": "fontFamily" }
+    },
+    "size": {
+      "xs":   { "value": "12px", "type": "fontSize" },
+      "sm":   { "value": "13px", "type": "fontSize" },
+      "base": { "value": "14px", "type": "fontSize" },
+      "lg":   { "value": "16px", "type": "fontSize" },
+      "xl":   { "value": "20px", "type": "fontSize" },
+      "2xl":  { "value": "24px", "type": "fontSize" },
+      "3xl":  { "value": "30px", "type": "fontSize" }
+    },
+    "weight": {
+      "regular":  { "value": "400", "type": "fontWeight" },
+      "medium":   { "value": "500", "type": "fontWeight" },
+      "semibold": { "value": "600", "type": "fontWeight" }
+    },
+    "lineHeight": {
+      "tight":   { "value": "1.2", "type": "lineHeight" },
+      "normal":  { "value": "1.5", "type": "lineHeight" },
+      "relaxed": { "value": "1.7", "type": "lineHeight" }
+    }
+  }
+}
