@@ -59,7 +59,7 @@ export const Desktop: Story = {
           variant="brand"
           logoText="RinggitPay"
           userName="Govind K"
-          userEmail="govind@ascertain.com.my"
+          userEmail="govind@finforz.com"
         />
         <div style="flex:1;display:flex;overflow:hidden">
           <rp-sidebar [items]="navItems" [(active)]="active" />
@@ -111,7 +111,7 @@ export const Mobile: Story = {
           logoText="RinggitPay"
           [compact]="true"
           userName="Govind K"
-          userEmail="govind@ascertain.com.my"
+          userEmail="govind@finforz.com"
         />
         <div style="flex:1;overflow:auto;min-height:0;background:var(--rp-surface-muted);padding:16px">
           <div style="font-size:18px;font-weight:600;color:var(--rp-text);margin-bottom:2px">Merchants</div>

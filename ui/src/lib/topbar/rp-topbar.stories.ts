@@ -16,7 +16,7 @@ export const BrandBlue: Story = {
   render: () => ({
     props: {
       userName: 'Govind K',
-      userEmail: 'govind@ascertain.com.my',
+      userEmail: 'govind@finforz.com',
     },
     template: `
       <rp-topbar
@@ -34,7 +34,7 @@ export const White: Story = {
   render: () => ({
     props: {
       userName: 'Govind K',
-      userEmail: 'govind@ascertain.com.my',
+      userEmail: 'govind@finforz.com',
     },
     template: `
       <rp-topbar
@@ -57,7 +57,7 @@ export const LogoOnly: Story = {
 export const Compact: Story = {
   name: 'Compact (mobile)',
   render: () => ({
-    props: { userName: 'Govind K', userEmail: 'govind@ascertain.com.my' },
+    props: { userName: 'Govind K', userEmail: 'govind@finforz.com' },
     template: `
       <div style="width:390px;border:1px solid var(--rp-border);border-radius:14px;overflow:hidden">
         <rp-topbar
