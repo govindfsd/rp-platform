@@ -29,7 +29,7 @@ jobs:
       - name: Build design tokens
         run: npm run tokens
       - name: Build libraries
-        run: npx nx run-many -t build --projects=ui,design,util
+        run: npx nx run-many -t build --projects=ui,design,util --configuration=production
       - name: Publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
