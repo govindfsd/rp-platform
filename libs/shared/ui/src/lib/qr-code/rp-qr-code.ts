@@ -1,4 +1,4 @@
-import {
+﻿import {
   ChangeDetectionStrategy,
   Component,
   ElementRef,
@@ -13,7 +13,7 @@ export type RpQrLevel = 'L' | 'M' | 'Q' | 'H';
 
 /**
  * Renders a QR code (payment links, DuitNow QR payloads) onto a canvas via the
- * `qrcode` library. Colors default to the @rp/design tokens.
+ * `qrcode` library. Colors default to the @ringgit-pay/design tokens.
  */
 @Component({
   selector: 'rp-qr-code',

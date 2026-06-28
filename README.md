@@ -1,12 +1,12 @@
-# rp-platform
+﻿# rp-platform
 
 Shared RinggitPay design system + utilities. Publishes to a private registry:
 
 | Package | Path |
 | --- | --- |
-| `@rp/ui` | `libs/shared/ui` |
-| `@rp/design` | `libs/shared/design` |
-| `@rp/util` | `libs/shared/util` |
+| `@ringgit-pay/ui` | `libs/shared/ui` |
+| `@ringgit-pay/design` | `libs/shared/design` |
+| `@ringgit-pay/util` | `libs/shared/util` |
 
 History was extracted from the original Nx monorepo via `git subtree`
 (split → add under `libs/shared/`), so per-file history is preserved.

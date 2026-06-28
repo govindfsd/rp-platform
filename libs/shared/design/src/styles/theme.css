@@ -1,5 +1,5 @@
-/*
- * @rp/design — semantic theme layer.
+﻿/*
+ * @ringgit-pay/design — semantic theme layer.
  * Maps raw primitives (generated -> primitives.css) to meaningful, themeable
  * variables. Light is the default; [data-theme='dark'] overrides.
  * Import order in an app: primitives.css, then this file.

@@ -1,5 +1,5 @@
-{
-  "name": "@rp/util",
+﻿{
+  "name": "@ringgit-pay/util",
   "version": "0.1.0",
   "peerDependencies": {
     "@angular/core": "^21.2.0"

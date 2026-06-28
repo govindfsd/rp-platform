@@ -1,4 +1,4 @@
-import nx from '@nx/eslint-plugin';
+﻿import nx from '@nx/eslint-plugin';
 import baseConfig from '../../../eslint.config.mjs';
 
 export default [
@@ -12,7 +12,7 @@ export default [
         'error',
         {
           // build-tokens.mjs is a build-time script (Style Dictionary); its deps
-          // are devDependencies of the workspace, not runtime peers of @rp/design.
+          // are devDependencies of the workspace, not runtime peers of @ringgit-pay/design.
           ignoredFiles: [
             '{projectRoot}/eslint.config.{js,cjs,mjs,ts,cts,mts}',
             '{projectRoot}/build/**',

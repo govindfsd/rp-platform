@@ -1,6 +1,6 @@
-# @rp/ui
+﻿# @ringgit-pay/ui
 
-Shared Angular component library for the RP platform. Contains 50+ standalone components covering forms, navigation, data display, overlays, and data visualisation — all built on `@rp/design` tokens.
+Shared Angular component library for the RP platform. Contains 50+ standalone components covering forms, navigation, data display, overlays, and data visualisation — all built on `@ringgit-pay/design` tokens.
 
 ---
 
@@ -23,14 +23,14 @@ npx nx run ui:storybook   # → http://localhost:4400
 Already listed as a dependency in `rp-admin` and `rp-partner`. For a new app:
 
 ```bash
-npm install @rp/ui
+npm install @ringgit-pay/ui
 ```
 
 Then add the theme CSS to your app's `project.json` styles array:
 
 ```json
 "styles": [
-  "node_modules/@rp/design/styles/theme.css",
+  "node_modules/@ringgit-pay/design/styles/theme.css",
   "src/styles.css"
 ]
 ```
@@ -42,7 +42,7 @@ Then add the theme CSS to your app's `project.json` styles array:
 All components are Angular **standalone** — import directly into your component's `imports` array, no NgModule needed.
 
 ```ts
-import { RpButton, RpInput, RpFormField } from '@rp/ui';
+import { RpButton, RpInput, RpFormField } from '@ringgit-pay/ui';
 
 @Component({
   imports: [RpButton, RpInput, RpFormField],
@@ -63,7 +63,7 @@ export class MyComponent { }
 - **Selector prefix:** all components use `rp-` (`rp-button`, `rp-input`, etc.)
 - **Inputs:** Angular signal inputs — bind with `[property]="value"`
 - **No NgModules:** every export is a standalone component, directive, or service
-- **Theming:** component styles use CSS variables from `@rp/design` and respond to light/dark automatically
+- **Theming:** component styles use CSS variables from `@ringgit-pay/design` and respond to light/dark automatically
 
 ---
 
@@ -122,7 +122,7 @@ export class MyComponent { }
 ### Data table
 
 ```ts
-import { RpDataTable, RpCellDefDirective, RpRowDetailDirective } from '@rp/ui';
+import { RpDataTable, RpCellDefDirective, RpRowDetailDirective } from '@ringgit-pay/ui';
 ```
 
 ```html
@@ -174,7 +174,7 @@ import { RpDataTable, RpCellDefDirective, RpRowDetailDirective } from '@rp/ui';
 | `RpDialogService` | Open modal dialogs — returns an `RpDialogRef` |
 
 ```ts
-import { RpToastService, RpDialogService } from '@rp/ui';
+import { RpToastService, RpDialogService } from '@ringgit-pay/ui';
 
 // toast
 this.toast.show({ message: 'Saved successfully', type: 'success' });

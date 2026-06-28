@@ -1,4 +1,4 @@
-# @rp/util
+﻿# @ringgit-pay/util
 
 Pure TypeScript utilities for the RP platform. No Angular dependencies — usable in components, services, Node scripts, or tests.
 
@@ -11,7 +11,7 @@ Covers: money formatting, currency unit conversion, number formatting, and date 
 Already listed as a dependency in `rp-admin` and `rp-partner`. For a new app:
 
 ```bash
-npm install @rp/util
+npm install @ringgit-pay/util
 ```
 
 ---
@@ -23,7 +23,7 @@ npm install @rp/util
 Format a monetary amount as a localized currency string.
 
 ```ts
-import { formatMoney } from '@rp/util';
+import { formatMoney } from '@ringgit-pay/util';
 
 formatMoney(1234.5)                              // "RM 1,234.50"
 formatMoney(1234.5, { currency: 'USD', locale: 'en-US' })  // "$1,234.50"
@@ -48,7 +48,7 @@ formatMoney(NaN)                                 // ""
 Convert integer minor units to a major-unit decimal.
 
 ```ts
-import { minorToMajor } from '@rp/util';
+import { minorToMajor } from '@ringgit-pay/util';
 
 minorToMajor(123450)          // 1234.50  (MYR — 2 decimal places)
 minorToMajor(12345, 'JPY')    // 12345    (JPY — 0 decimal places)
@@ -61,7 +61,7 @@ minorToMajor(12345, 'JPY')    // 12345    (JPY — 0 decimal places)
 Convert a major-unit decimal to integer minor units. Use this before sending amounts to the API.
 
 ```ts
-import { majorToMinor } from '@rp/util';
+import { majorToMinor } from '@ringgit-pay/util';
 
 majorToMinor(1234.50)         // 123450
 majorToMinor(1234.50, 'USD')  // 123450
@@ -74,7 +74,7 @@ majorToMinor(1234.50, 'USD')  // 123450
 Returns the number of minor-unit decimal places for a currency.
 
 ```ts
-import { minorUnitDigits } from '@rp/util';
+import { minorUnitDigits } from '@ringgit-pay/util';
 
 minorUnitDigits('MYR')  // 2
 minorUnitDigits('JPY')  // 0
@@ -86,7 +86,7 @@ minorUnitDigits('KWD')  // 3
 ### Constants
 
 ```ts
-import { DEFAULT_CURRENCY, DEFAULT_LOCALE } from '@rp/util';
+import { DEFAULT_CURRENCY, DEFAULT_LOCALE } from '@ringgit-pay/util';
 
 DEFAULT_CURRENCY  // 'MYR'
 DEFAULT_LOCALE    // 'en-MY'
@@ -101,7 +101,7 @@ DEFAULT_LOCALE    // 'en-MY'
 Format a number with locale-aware grouping separators.
 
 ```ts
-import { formatNumber } from '@rp/util';
+import { formatNumber } from '@ringgit-pay/util';
 
 formatNumber(1234567)                        // "1,234,567"
 formatNumber(0.253, { percent: true })       // "25%"
@@ -125,7 +125,7 @@ formatNumber(null)                           // ""
 Format a date, ISO string, or timestamp. Returns `""` for null or invalid input.
 
 ```ts
-import { formatDate } from '@rp/util';
+import { formatDate } from '@ringgit-pay/util';
 
 formatDate('2024-01-15')                         // "15 Jan 2024"
 formatDate(new Date(), { dateStyle: 'long' })    // "15 January 2024"
@@ -152,7 +152,7 @@ Options extend `Intl.DateTimeFormatOptions` — see [MDN reference](https://deve
 Use `rpMoney` directly in templates. Import `RpMoneyPipe` into your component's `imports` array.
 
 ```ts
-import { RpMoneyPipe } from '@rp/util';
+import { RpMoneyPipe } from '@ringgit-pay/util';
 
 @Component({
   imports: [RpMoneyPipe],

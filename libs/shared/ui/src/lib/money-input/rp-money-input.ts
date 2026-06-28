@@ -1,4 +1,4 @@
-import {
+﻿import {
   ChangeDetectionStrategy,
   Component,
   computed,
@@ -7,7 +7,7 @@ import {
   signal,
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { formatNumber } from '@rp/util';
+import { formatNumber } from '@ringgit-pay/util';
 
 /**
  * Money amount input. Shows a currency prefix (e.g. "RM") and formats the
@@ -158,7 +158,7 @@ export class RpMoneyInput implements ControlValueAccessor {
 
   private formatValue(): string {
     if (this.value == null || !Number.isFinite(this.value)) return '';
-    // Delegate number formatting to the shared @rp/util helper (single source of
+    // Delegate number formatting to the shared @ringgit-pay/util helper (single source of
     // truth); the currency symbol is rendered separately as the field prefix.
     return formatNumber(this.value, {
       locale: this.locale(),

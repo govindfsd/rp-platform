@@ -1,4 +1,4 @@
-import StyleDictionary from 'style-dictionary';
+﻿import StyleDictionary from 'style-dictionary';
 
 // Style Dictionary v5 — class-based, async, ESM.
 // Builds primitive tokens into CSS custom properties + SCSS variables.
@@ -33,4 +33,4 @@ const sd = new StyleDictionary({
 });
 
 await sd.buildAllPlatforms();
-console.log('✓ @rp/design tokens built -> libs/shared/design/src/styles/');
+console.log('✓ @ringgit-pay/design tokens built -> libs/shared/design/src/styles/');

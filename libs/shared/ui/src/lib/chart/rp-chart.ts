@@ -1,4 +1,4 @@
-import {
+﻿import {
   ChangeDetectionStrategy,
   Component,
   DestroyRef,
@@ -48,7 +48,7 @@ export interface RpChartSlice {
 
 /**
  * Charts for dashboards & reports, wrapping Apache ECharts and themed to the
- * @rp/design tokens (so it tracks light/dark). Pass `categories` + `series`
+ * @ringgit-pay/design tokens (so it tracks light/dark). Pass `categories` + `series`
  * for cartesian charts, or `slices` for pie/donut. Use `option` to override
  * with a raw ECharts option for anything bespoke.
  */

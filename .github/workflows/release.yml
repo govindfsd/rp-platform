@@ -1,6 +1,6 @@
-name: Release (@rp/* packages)
+﻿name: Release (@rp/* packages)
 
-# Publishes @rp/ui, @rp/design, @rp/util to the private registry.
+# Publishes @ringgit-pay/ui, @ringgit-pay/design, @ringgit-pay/util to the private registry.
 # Intentionally manual-only and UN-TRIGGERED until you wire the registry + token.
 on:
   workflow_dispatch:

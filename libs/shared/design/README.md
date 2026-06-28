@@ -1,4 +1,4 @@
-# @rp/design
+﻿# @ringgit-pay/design
 
 Design system foundation for the RP platform. Provides design tokens (CSS variables), a Tailwind CSS preset, and an Angular `ThemeService` for light/dark mode and white-label brand overrides.
 
@@ -28,18 +28,18 @@ In your app's `project.json` styles array (before your own `styles.css`):
 
 ```json
 "styles": [
-  "node_modules/@rp/design/styles/theme.css",
+  "node_modules/@ringgit-pay/design/styles/theme.css",
   "src/styles.css"
 ]
 ```
 
-This loads all CSS variables onto `<html>`. Without it, all `@rp/ui` components will render without colours.
+This loads all CSS variables onto `<html>`. Without it, all `@ringgit-pay/ui` components will render without colours.
 
 ### 2. Add the Tailwind preset (optional — only if using Tailwind in your app)
 
 ```js
 // tailwind.config.js
-const rpPreset = require('@rp/design/tailwind-preset');
+const rpPreset = require('@ringgit-pay/design/tailwind-preset');
 
 module.exports = {
   presets: [rpPreset],
@@ -123,7 +123,7 @@ All tokens are CSS custom properties on `:root`. Use them in your own component 
 Inject `ThemeService` to control light/dark mode and apply tenant brand overrides at runtime.
 
 ```ts
-import { ThemeService } from '@rp/design';
+import { ThemeService } from '@ringgit-pay/design';
 
 @Component({ ... })
 export class AppShell {

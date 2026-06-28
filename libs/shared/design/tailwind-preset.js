@@ -1,11 +1,11 @@
-/**
- * @rp/design Tailwind preset.
+﻿/**
+ * @ringgit-pay/design Tailwind preset.
  * Tailwind utilities resolve to the CSS custom properties emitted by the token
  * pipeline (primitives.css) + semantic theme (theme.css), so utilities stay in
  * sync with light/dark mode and per-tenant brand overrides automatically.
  *
  * Usage in an app's tailwind.config.js:
- *   module.exports = { presets: [require('@rp/design/tailwind-preset')], ... }
+ *   module.exports = { presets: [require('@ringgit-pay/design/tailwind-preset')], ... }
  */
 module.exports = {
   theme: {
