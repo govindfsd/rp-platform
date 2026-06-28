@@ -149,9 +149,7 @@ Push to `master` on GitHub — the `storybook.yml` workflow will trigger automat
 
 To trigger manually: GitHub repo → **Actions** → **Deploy Storybook** → **Run workflow**.
 
-Your Storybook will be live at: **https://storybook.yourcompany.com**
-
-Update the Storybook URL in `libs/shared/ui/README.md` once it's live.
+Your Storybook is live at: **http://52.221.234.254**
 
 ---
 

@@ -6,7 +6,7 @@ Shared Angular component library for the RP platform. Contains 50+ standalone co
 
 ## Browse components (Storybook)
 
-> **http://storybook.yourcompany.com** *(update this URL once your server is live)*
+> **http://52.221.234.254**
 
 Every component has live interactive examples, all input controls, and an auto-generated API reference. Run it locally with:
 
